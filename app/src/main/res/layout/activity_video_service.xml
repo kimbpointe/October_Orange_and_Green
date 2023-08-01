@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C1ED9F"
+    tools:context=".VideoService">
+
+    <ImageView
+        android:id="@+id/backdrop"
+        android:layout_width="390dp"
+        android:layout_height="700dp"
+        android:background="@drawable/recording_backdrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/cameraBody"
+        android:layout_width="350dp"
+        android:layout_height="270dp"
+        android:src="@drawable/camera_body"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/backdrop"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@id/backdrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.401" />
+
+    <ImageView
+        android:id="@+id/clicker"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/recording_frame"
+        app:layout_constraintBottom_toBottomOf="@id/cameraBody"
+        app:layout_constraintEnd_toEndOf="@id/cameraBody"
+        app:layout_constraintStart_toStartOf="@+id/frame"
+        app:layout_constraintTop_toTopOf="@id/cameraBody"
+        app:layout_constraintVertical_bias="0.081" />
+
+    <ImageView
+        android:id="@+id/cameraTop"
+        android:layout_width="142dp"
+        android:layout_height="60dp"
+        android:src="@drawable/camera_top"
+        app:layout_constraintBottom_toBottomOf="@id/frame"
+        app:layout_constraintEnd_toEndOf="@id/cameraBody"
+        app:layout_constraintStart_toStartOf="@id/cameraBody"
+        app:layout_constraintTop_toTopOf="@id/backdrop"
+        app:layout_constraintVertical_bias="0.378" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="200dp"
+        android:layout_height="64dp"
+        android:background="@drawable/end_button"
+        android:text="Cancel"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recordingButton"
+        app:layout_constraintVertical_bias="0.403" />
+
+    <Button
+        android:id="@+id/recordingButton"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/recording_button"
+        android:onClick="recordVideoButtonPressed"
+        android:text="Begin Recording"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/orangeCircle"
+        app:layout_constraintEnd_toEndOf="@id/orangeCircle"
+        app:layout_constraintStart_toStartOf="@id/orangeCircle"
+        app:layout_constraintTop_toTopOf="@id/orangeCircle" />
+
+    <ImageView
+        android:id="@+id/orangeCircle"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:src="@drawable/orange_circle"
+        app:layout_constraintBottom_toBottomOf="@id/frame"
+        app:layout_constraintEnd_toEndOf="@id/frame"
+        app:layout_constraintStart_toStartOf="@id/frame"
+        app:layout_constraintTop_toTopOf="@id/frame" />
+
+    <ImageView
+        android:id="@+id/frame"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:src="@drawable/recording_frame"
+        app:layout_constraintBottom_toBottomOf="@id/cameraBody"
+        app:layout_constraintEnd_toEndOf="@id/cameraBody"
+        app:layout_constraintStart_toStartOf="@id/cameraBody"
+        app:layout_constraintTop_toTopOf="@id/cameraBody" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
