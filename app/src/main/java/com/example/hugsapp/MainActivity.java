@@ -47,12 +47,13 @@ import java.util.UUID;
 public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnDeviceItemListener {
 
     Button connect, logout, website;
-    TextView instructions;
+    TextView instructions, account;
     Dialog connectDialog;
     DeviceAdapter deviceAdapter;
     ArrayList<BluetoothDevice> devices;
     RecyclerView deviceList;
     ImageView openCamera;
+
 
     //Bluetooth variables
     BluetoothAdapter mBluetoothAdapter;
@@ -155,10 +156,14 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+
         connect = findViewById(R.id.connectButton);
         website = findViewById(R.id.website);
         logout = findViewById(R.id.logout);
         instructions = findViewById(R.id.instructions);
+        account = findViewById(R.id.account);
         openCamera = findViewById(R.id.camera);
 
         connectDialog = new Dialog(this);
@@ -176,6 +181,15 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
 
         devices = new ArrayList<>();
 
+        String emailText = user.getEmail();
+
+        if(user==null){
+            Intent intent = new Intent(getApplicationContext(), Login.class);
+            startActivity(intent);
+            finish();
+        } else {
+            account.setText(emailText);
+        }
 
         instructions.setOnClickListener(new View.OnClickListener() {
             @Override
