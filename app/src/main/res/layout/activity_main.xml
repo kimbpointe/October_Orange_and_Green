@@ -75,7 +75,6 @@
         android:layout_width="324dp"
         android:layout_height="72dp"
         android:background="@drawable/pill_button"
-        android:padding="24dp"
         android:text="Connect to Toy"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,7 +85,7 @@
         app:layout_constraintVertical_bias="0.24" />
 
     <Button
-        android:id="@+id/data"
+        android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
@@ -94,7 +93,7 @@
         android:layout_marginBottom="24dp"
         android:background="@drawable/list_button_highlight"
         android:padding="20dp"
-        android:text="YOUR DATA"
+        android:text="LOGOUT"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textStyle="bold"

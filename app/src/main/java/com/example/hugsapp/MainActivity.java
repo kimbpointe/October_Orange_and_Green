@@ -30,28 +30,29 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hugsapp.models.DeviceAdapter;
 import com.example.hugsapp.models.RemoteConfiguration;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnDeviceItemListener {
 
-    Button connect, data, website;
+    Button connect, logout, website;
     TextView instructions;
     Dialog connectDialog;
     DeviceAdapter deviceAdapter;
     ArrayList<BluetoothDevice> devices;
     RecyclerView deviceList;
+    ImageView openCamera;
 
     //Bluetooth variables
     BluetoothAdapter mBluetoothAdapter;
@@ -69,6 +70,8 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
     // Obtain the FirebaseAnalytics instance.
 
     FirebaseAnalytics mFirebaseAnalytics;
+    FirebaseAuth auth;
+    FirebaseUser user;
 
 
     private static final String APP_NAME = "HUGS";
@@ -154,8 +157,9 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
 
         connect = findViewById(R.id.connectButton);
         website = findViewById(R.id.website);
-        data = findViewById(R.id.data);
+        logout = findViewById(R.id.logout);
         instructions = findViewById(R.id.instructions);
+        openCamera = findViewById(R.id.camera);
 
         connectDialog = new Dialog(this);
 
@@ -195,15 +199,24 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
             }
         });
 
-        data.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // open text files location
-                final File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/HUGS/");
-                Toast.makeText(getApplicationContext(), "Location: "+path.getPath(), Toast.LENGTH_LONG).show();
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+                finish();
             }
         });
 
+        openCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), VideoService.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 

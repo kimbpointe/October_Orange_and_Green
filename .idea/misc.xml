@@ -44,6 +44,10 @@
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/LightBlue/app/src/main/res/drawable/video_camera.xml" value="0.133" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/LightBlue/app/src/main/res/layout/activity_beign_session.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/LightBlue/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/drawable-mdpi/home_backdrop.xml" value="0.202" />
+        <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/drawable-mdpi/login_backdrop.xml" value="0.202" />
+        <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/drawable-mdpi/login_backdrop2.xml" value="0.202" />
+        <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/drawable-mdpi/session_complete_backdrop.xml" value="0.202" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/drawable-v24/pill_button.xml" value="0.1875" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/drawable/camera_body.xml" value="0.202" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/drawable/camera_top.xml" value="0.2" />
@@ -63,19 +67,25 @@
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/drawable/select_circle.xml" value="0.1875" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/drawable/white_rectangle.xml" value="0.1875" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/activity_beign_session.xml" value="0.25" />
+        <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/activity_onboarding.xml" value="0.25" />
+        <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/activity_registration.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/activity_session.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/activity_validation.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/activity_video_service.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/activity_video_validation.xml" value="0.25" />
+        <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/connect_dialog.xml" value="0.25" />
+        <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/device_item.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/onboard_five_fragment.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/onboard_four_fragment.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/onboard_one_fragment.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/onboard_six_fragment.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/onboard_three_fragment.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/onboard_two_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/session_complete.xml" value="0.25" />
+        <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/validate_dialog.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/layout/video_validate_dialog.xml" value="0.25" />
         <entry key="..\:/Users/kimbe/AndroidStudioProjects/Orange and Green/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.202" />
       </map>

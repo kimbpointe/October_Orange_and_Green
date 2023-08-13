@@ -17,11 +17,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.Group;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -35,9 +38,12 @@ import java.util.HashMap;
 
 public class videoValidation extends AppCompatActivity {
     Button uploadv, home;
+    Group save, goHome;
     ProgressDialog progressDialog;
     LottieAnimationView check;
     Dialog validateDialog, sessionComplete;
+    FirebaseAuth auth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,11 @@ public class videoValidation extends AppCompatActivity {
         validateDialog = new Dialog(this);
         sessionComplete = new Dialog(this);
         home= findViewById(R.id.home);
+        save = findViewById(R.id.save_data);
+        goHome = findViewById(R.id.return_home);
+
+        save.setVisibility(View.VISIBLE);
+        goHome.setVisibility(View.INVISIBLE);
 
         openValidateDialog();
 
@@ -132,9 +143,12 @@ public class videoValidation extends AppCompatActivity {
     }
 
     private void uploadVideo() {
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+
         if (videoURI != null) {
             // save the selected video in Firebase storage
-            final StorageReference reference = FirebaseStorage.getInstance().getReference("Videos/" + System.currentTimeMillis() + "." + getFileType(videoURI));
+            final StorageReference reference = FirebaseStorage.getInstance().getReference("Videos/" + user.getEmail() + "_HUGS_Session_" + System.currentTimeMillis() + "." + getFileType(videoURI));
             reference.putFile(videoURI).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -149,8 +163,8 @@ public class videoValidation extends AppCompatActivity {
                     // Video uploaded successfully
                     // Dismiss dialog
                     progressDialog.dismiss();
-                    uploadv.setVisibility(View.INVISIBLE);
-                    home.setVisibility(View.VISIBLE);
+                    save.setVisibility(View.INVISIBLE);
+                    goHome.setVisibility(View.VISIBLE);
                     Toast.makeText(videoValidation.this, "Video Uploaded!!", Toast.LENGTH_SHORT).show();
                 }
             }).addOnFailureListener(new OnFailureListener() {

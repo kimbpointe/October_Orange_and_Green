@@ -24,7 +24,6 @@ public class OnboardOne extends Fragment {
 
     TextView title, description, skip;
     Button next;
-    ImageView back;
     Settings settings;
 
 
@@ -46,7 +45,6 @@ public class OnboardOne extends Fragment {
         title = view.findViewById(R.id.title);
         description = view.findViewById(R.id.description);
         skip = view.findViewById(R.id.skip);
-        back = view.findViewById(R.id.back);
         next = view.findViewById(R.id.start);
 
 
@@ -61,13 +59,6 @@ public class OnboardOne extends Fragment {
             @Override
             public void onClick(View view) {
                 ((Onboarding) mActivity).exitReport();
-            }
-        });
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Onboarding.lastTab();
             }
         });
 

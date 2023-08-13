@@ -7,7 +7,7 @@
     android:layout_marginVertical="8dp"
     android:padding="8dp"
     android:layout_marginHorizontal="4dp"
-    android:background="@drawable/list_button_highlight"
+    android:background="@drawable/end_button"
     android:layout_width="match_parent"
     android:layout_height="70dp"
     android:id="@+id/deviceItemLayout"

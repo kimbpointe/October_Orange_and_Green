@@ -33,8 +33,8 @@ public class SplashScreen extends AppCompatActivity {
         settings = new Settings(this);
         babyFace = findViewById(R.id.splash_img);
 
-        Intent welcomeIntent = new Intent(SplashScreen.this, Onboarding.class);
-        Intent homeIntent = new Intent(SplashScreen.this, MainActivity.class);
+        Intent welcomeIntent = new Intent(SplashScreen.this, Login.class);
+        Intent homeIntent = new Intent(SplashScreen.this, Register.class);
 
         homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 

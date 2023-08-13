@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.hugsapp.models.RemoteConfiguration;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -43,6 +45,9 @@ public class Validation extends AppCompatActivity {
     String results;
     FirebaseStorage storage;
     StorageReference reference;
+
+    FirebaseAuth auth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -245,6 +250,9 @@ public class Validation extends AppCompatActivity {
     }
 
     public void writeToFile(String data) {
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+
         // Get the directory for the user's public pictures directory.
         final File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/HUGS/");
 
@@ -254,8 +262,8 @@ public class Validation extends AppCompatActivity {
             path.mkdirs();
         }
 
-        final File file = new File(path, "HUGS_Session_"+System.currentTimeMillis()+".txt");
-        reference.child("HUGS_Session_" + System.currentTimeMillis() + ".txt").putBytes(data.getBytes());
+        final File file = new File(path, user.getEmail() + "HUGS_Session_"+System.currentTimeMillis()+".txt");
+        reference.child(user.getEmail() + "_HUGS_Session_" + System.currentTimeMillis() + ".txt").putBytes(data.getBytes());
         // Save your stream, don't forget to flush() it before closing it.
         try {
             file.createNewFile();

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Onboarding"
-    android:background="@color/main_blue"
+    android:background="#FFE6C0"
     android:weightSum="100"
     android:orientation="vertical"
     >
@@ -28,7 +28,7 @@
         app:tabIndicatorAnimationMode="elastic"
         app:tabIndicatorHeight="0dp"
         android:layout_weight="1"
-        android:background="@color/main_blue"
+        android:background="#FFE6C0"
         app:tabMaxWidth="20dp">
 
     </com.google.android.material.tabs.TabLayout>

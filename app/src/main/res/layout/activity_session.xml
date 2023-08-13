@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_blue"
+    android:background="#FFE6C0"
     tools:context=".Session">
 
 
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
         android:text="Recording Session..."
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="status:"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
 
     <Button
         android:id="@+id/abortSession"
-        android:layout_width="200dp"
+        android:layout_width="235dp"
         android:layout_height="64dp"
         android:background="@drawable/end_button"
         android:text="Cancel"
@@ -81,6 +81,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="12dp"
+        app:tint="#F3B85E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/timerText"
         app:layout_constraintTop_toBottomOf="@+id/dataTransferAnimation"
@@ -93,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text=""
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

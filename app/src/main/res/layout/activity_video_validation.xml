@@ -4,8 +4,20 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/main_blue"
+    android:background="@color/white"
     tools:context=".videoValidation">
+
+    <ImageView
+        android:id="@+id/backdrop"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/session_complete_backdrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView3"
@@ -13,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
         android:text="Session Complete!"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,13 +43,23 @@
         app:layout_constraintTop_toBottomOf="@+id/validationResult"
         app:lottie_rawRes="@raw/check" />
 
+    <ImageView
+        android:id="@+id/backdrop2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/home_backdrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/validationResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Validation Section"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -47,26 +69,72 @@
     <Button
         android:id="@+id/save"
         android:layout_width="300dp"
-        android:layout_height="54dp"
-        android:background="@drawable/next_button"
-        android:text="Save &amp; Upload to Firebase"
+        android:layout_height="55dp"
+        android:background="@drawable/end_button"
+        android:visibility="invisible"
+        android:text="Save &amp; Upload"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checked" />
 
+
+    <TextView
+        android:id="@+id/uploadcomp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="188dp"
+        android:text="Upload Complete!"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/savedVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Saved to Database"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uploadcomp" />
+
+
     <Button
         android:id="@+id/home"
         android:layout_width="300dp"
         android:layout_height="54dp"
-        android:background="@drawable/end_button"
+        android:background="@drawable/pill_button"
         android:text="Start new session"
-        android:visibility="invisible"
         android:textColor="@color/white"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checked" />
+        app:layout_constraintTop_toBottomOf="@+id/savedVideo"
+        app:layout_constraintVertical_bias="0.349" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/save_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="save, validationResult, textView3, checked, backdrop"/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/return_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="backdrop2, home, uploadcomp, savedVideo"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
