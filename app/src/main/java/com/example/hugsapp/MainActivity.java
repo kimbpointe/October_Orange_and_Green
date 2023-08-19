@@ -44,9 +44,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnDeviceItemListener {
+public class MainActivity extends AppCompatActivity {
 
-    Button connect, logout, website;
+    Button begin, logout, website;
     TextView instructions, account;
     Dialog connectDialog;
     DeviceAdapter deviceAdapter;
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
     private static final String APP_NAME = "HUGS";
     private static final UUID MY_UUID = UUID.fromString("19B10001-E8F2-537E-4F6C-D104768A1214");
 
-
+    /*
     private final ServiceConnection mServiceConnection = new ServiceConnection() {
 
         @Override
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
             }
         }
     };
-
+ */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 
-        connect = findViewById(R.id.connectButton);
+        begin = findViewById(R.id.beginButton);
         website = findViewById(R.id.website);
         logout = findViewById(R.id.logout);
         instructions = findViewById(R.id.instructions);
@@ -168,10 +168,10 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
 
         connectDialog = new Dialog(this);
 
-        requestMultiplePermission(new String[]{Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.BLUETOOTH_CONNECT, Manifest.permission.WRITE_EXTERNAL_STORAGE}, "Permissions Needed", "Please enable all permissions in settings to use this app", 123);
+        // requestMultiplePermission(new String[]{Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.BLUETOOTH_CONNECT, Manifest.permission.WRITE_EXTERNAL_STORAGE}, "Permissions Needed", "Please enable all permissions in settings to use this app", 123);
 
 
-        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+       /* mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
         registerReceiver(mReceiver, filter);
@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
 
-        devices = new ArrayList<>();
+        devices = new ArrayList<>(); */
 
         String emailText = user.getEmail();
 
@@ -197,10 +197,12 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
                 startActivity(new Intent(getApplicationContext(), Onboarding.class));
             }
         });
-        connect.setOnClickListener(new View.OnClickListener() {
+        begin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openConnectDialog();
+                Intent intent = new Intent(getApplicationContext(), BeginSession.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -234,7 +236,7 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
 
     }
 
-
+/*
     public void openConnectDialog() {
         connectDialog.setContentView(R.layout.connect_dialog);
         connectDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -390,6 +392,8 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
         return false;
     }
 
+ */
+
     public void openFolder() {
         final File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/HUGS/");
         // location = "/sdcard/my_folder";
@@ -399,7 +403,7 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
         intent.setDataAndType(mydir,"application/*");    // or use */*
         startActivity(intent);
     }
-
+/*
     private void requestMultiplePermission(String[] permissions, String title, String reason, int RESULT_CODE) {
 
         boolean showPersonalDialogRequest = false;
@@ -432,7 +436,7 @@ public class MainActivity extends AppCompatActivity implements DeviceAdapter.OnD
             ActivityCompat.requestPermissions(this,
                     permissions, RESULT_CODE);
         }
-    }
+    }*/
 
 
 
