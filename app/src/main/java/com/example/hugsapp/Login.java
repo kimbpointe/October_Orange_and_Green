@@ -24,7 +24,7 @@ public class Login extends AppCompatActivity {
     Button login;
     FirebaseAuth mAuth;
     LottieAnimationView loading;
-    TextView forgot;
+    TextView forgot, passwordInfo;
 
     @Override
     public void onStart() {
@@ -51,6 +51,7 @@ public class Login extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
         loading = findViewById(R.id.loadingAnimate);
         forgot = findViewById(R.id.forgot);
+        passwordInfo= findViewById(R.id.password_info);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
