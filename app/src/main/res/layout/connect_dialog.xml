@@ -46,9 +46,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_marginHorizontal="25dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="48dp"
                 android:background="#FF6A06"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.264"
                 app:layout_constraintStart_toStartOf="@+id/bluetoothAnimate"
                 app:layout_constraintTop_toBottomOf="@+id/bluetoothAnimate" />
 
@@ -67,6 +68,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/bluetoothAnimate"
                 app:layout_constraintTop_toTopOf="@+id/bluetoothAnimate" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="If you have previously connected to toy in this session please directly click done"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bluetoothAnimate"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                />
 
 
 

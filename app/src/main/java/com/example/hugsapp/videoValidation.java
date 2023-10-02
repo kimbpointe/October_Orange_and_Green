@@ -105,7 +105,9 @@ public class videoValidation extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validateDialog.dismiss();
-                check.setAnimation(R.raw.error);
+                Toast.makeText(videoValidation.this, "Session Restarted", Toast.LENGTH_SHORT).show();
+                Intent restart = new Intent(getApplicationContext(), VideoService.class);
+                startActivity(restart);
             }
         });
 
